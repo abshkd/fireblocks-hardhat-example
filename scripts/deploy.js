@@ -14,13 +14,13 @@ async function main() {
   }
 
   // ethers is available in the global scope
-  const [deployer] = await ethers.getSigners();
-  console.log(
-    "Deploying the contracts with the account:",
-    await deployer.getAddress()
-  );
+  // const [deployer] = await ethers.getSigners();
+  // console.log(
+  //   "Deploying the contracts with the account:",
+  //   await deployer.getAddress()
+  // );
 
-  console.log("Account balance:", (await deployer.getBalance()).toString());
+  // console.log("Account balance:", (await deployer.getBalance()).toString());
 
   const Token = await ethers.getContractFactory("Token");
   const token = await Token.deploy();

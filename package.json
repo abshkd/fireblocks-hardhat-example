@@ -30,6 +30,8 @@
     "solidity-coverage": "^0.7.21"
   },
   "dependencies": {
-    "@fireblocks/hardhat-fireblocks": "^0.0.4"
+    "@fireblocks/hardhat-fireblocks": "^0.0.4",
+    "@openzeppelin/contracts": "^4.7.3",
+    "dotenv": "^16.0.2"
   }
 }

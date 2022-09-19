@@ -9,24 +9,14 @@ const hre = require("hardhat");
 // const parser = new DatauriParser();
 
 async function main() {
-  const tokenAddress = "0xF17E26c8Eb2c3FC35CB4730f8b6CD872ff6bC609";
+  const tokenAddress = "0x3209cfA0608Ad64419aEB2071256173524357836";
   const signer = await hre.ethers.getSigner()
-  const signerAdderss = await signer.getAddress()
-  const token = await hre.ethers.getContractAt("Token", tokenAddress);
-//   const tokenData = {
-//     "name": "SpaceBunny #1",
-//     "image": "https://i.ibb.co/m8fsvgC/spcb-6.jpg",
-//   }
+  const signerAddress = await signer.getAddress()
+  const Token = await hre.ethers.getContractAt("AllSpark", tokenAddress, signer);
 
-//   const tokenURI = parser.format('.json', JSON.stringify(tokenData)).content
-  
-//   const tx = await spaceBunnies.safeMint(signerAdderss, tokenURI);
-//   await tx.wait()
-
-//   console.log("A new Space Bunny NFT has been minted to:", signerAdderss);
-  // console.log("tokenURI:", await spaceBunnies.tokenURI(0))
-
-  console.log(await token.name());
+  console.log(await Token.name());
+  // const mintToken = await Token['mint(address, uint256)'](signerAddress, 100);
+  const transaction = await Token.unpause();
 }
 
 // We recommend this pattern to be able to use async/await everywhere

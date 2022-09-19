@@ -1,9 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("@fireblocks/hardhat-fireblocks");
-// The next line is part of the sample project, you don't need it in your
-// project. It imports a Hardhat task definition, that can be used for
-// testing the frontend.
-require("./tasks/faucet");
+require("dotenv").config()
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -14,10 +11,11 @@ module.exports = {
     },
     goerli: {
       url: `https://rpc.ankr.com/eth_goerli`,
+      
       fireblocks: {
-        privateKey: './fireblocks_secret.key',
-        apiKey: '2f330fe0-56a8-9c0d-8bdc-c3a34ea31240',
-        vaultAccountIds: 3
+        privateKey: process.env.FIREBLOCKS_API_PRIVATE_KEY_PATH,
+        apiKey: process.env.FIREBLOCKS_API_KEY,
+        vaultAccountIds: process.env.FIREBLOCKS_VAULT_ACCOUNT_IDS
       }
     }
   }

@@ -13,16 +13,7 @@ async function main() {
     );
   }
 
-  // ethers is available in the global scope
-  // const [deployer] = await ethers.getSigners();
-  // console.log(
-  //   "Deploying the contracts with the account:",
-  //   await deployer.getAddress()
-  // );
-
-  // console.log("Account balance:", (await deployer.getBalance()).toString());
-
-  const Token = await ethers.getContractFactory("Token");
+  const Token = await ethers.getContractFactory("AllSpark");
   const token = await Token.deploy();
   await token.deployed();
 
@@ -45,10 +36,10 @@ function saveFrontendFiles(token) {
     JSON.stringify({ Token: token.address }, undefined, 2)
   );
 
-  const TokenArtifact = artifacts.readArtifactSync("Token");
+  const TokenArtifact = artifacts.readArtifactSync("AllSpark");
 
   fs.writeFileSync(
-    path.join(contractsDir, "Token.json"),
+    path.join(contractsDir, "AllSpark.json"),
     JSON.stringify(TokenArtifact, null, 2)
   );
 }

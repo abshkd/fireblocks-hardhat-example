@@ -26,6 +26,8 @@ npx hardhat run scripts/deploy.js --network localhost
 ```
 
 ### To deploy to a network
+Copy the `.env.example` as `.env` to add your API credentials. *Do not upload the `.env` to repository or public view as it holds sensitive information.*
+You can get the Vault ID by using Fireblocks API for your workspace.
 For Fireblocks deployment, configure the `hardhat.config.js` for your target network as per the sample below.
 ```
 goerli: {

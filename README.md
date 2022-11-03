@@ -7,7 +7,7 @@ The first things you need to do are cloning this repository and installing its
 dependencies:
 
 ```sh
-git clone https://github.com/abshkd/hardhat-boilerplate.git
+git clone https://github.com/abshkd/fireblocks-hardhat-example.git
 cd hardhat-boilerplate
 npm install
 ```

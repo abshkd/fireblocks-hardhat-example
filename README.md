@@ -8,7 +8,7 @@ dependencies:
 
 ```sh
 git clone https://github.com/abshkd/fireblocks-hardhat-example.git
-cd hardhat-boilerplate
+cd fireblocks-hardhat-example
 npm install
 ```
 

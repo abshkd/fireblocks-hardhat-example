@@ -9,14 +9,22 @@ const hre = require("hardhat");
 // const parser = new DatauriParser();
 
 async function main() {
-  const tokenAddress = "0x3209cfA0608Ad64419aEB2071256173524357836";
+  const tokenAddress = "0x3390ca8Fa6AC096B3Dc4C727E3222c547072d3E8";
   const signer = await hre.ethers.getSigner()
   const signerAddress = await signer.getAddress()
-  const Token = await hre.ethers.getContractAt("AllSpark", tokenAddress, signer);
+  const Token = await hre.ethers.getContractAt("MyToken", tokenAddress, signer);
 
-  console.log(await Token.name());
-  // const mintToken = await Token['mint(address, uint256)'](signerAddress, 100);
-  const transaction = await Token.unpause();
+  const name = await Token.name()
+  const symbol = await Token.symbol()
+
+  const amountToMint = hre.ethers.utils.parseEther("100");
+
+  console.log(`${name} (${symbol})`);
+  console.log(`Mint ${symbol}`)
+  const mint = await Token.mint("0x1ecb16D2145C175C8277a3fd29aFdB859b16B85C", amountToMint)
+  
+  console.log(mint)
+
 }
 
 // We recommend this pattern to be able to use async/await everywhere

@@ -70,3 +70,11 @@ npm install
 npm start
 ```
 
+### Let's use DefiSDK for Games!
+See the examples directory for a test case that sends a couple of ERC1155 items to OTA/Whitelist address.
+`examples/*.ts`
+Exercise: Can you use the example of hardhat contract interaction to do the same without DefiSDK? Hint:  You only need to refer to hardhat/ethers.js documentation. Fireblocks Web3 provider handles it transparently.
+
+### Frontend (coming soon)!
+Fireblocks NFT API to update the frontend and show all your NFTs, across ALL Chains in you Vault account!
+
